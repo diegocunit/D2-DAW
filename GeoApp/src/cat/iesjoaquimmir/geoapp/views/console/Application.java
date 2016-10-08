@@ -12,7 +12,7 @@ public class Application {
      public static void main(String[] args){
      Scanner input = new Scanner(System.in);
      
-         System.out.printf("1- Cerlce 2- Quadrat 3- Rectangle 4- Esfera 5- ColoreS ");
+         System.out.printf("1- Quadrat 2- Cerlce Quadrat 3- Rectangle 4- Esfera 5- ColoreS ");
         
          int resp = input.nextInt();
          
@@ -38,7 +38,7 @@ public class Application {
         private static void square(){
              Scanner input = new Scanner(System.in);
      
-         System.out.printf("1- Sense SC 2- Amb SC ");
+         System.out.printf("1- Sense SC 2- Amb SC 3- BGCOLOR ");
         
          int resp = input.nextInt();
          switch(resp){
@@ -56,6 +56,27 @@ public class Application {
          System.out.printf("El perimetre de c1: %.2f %n", c2.getPerimeter());
          System.out.printf("L'area de c1: %.2f %n", c2.getArea());
      break;
+             case 3:
+//<editor-fold defaultstate="collapsed" desc="crearcolores">
+        Color co1 = new Color(Color.MAX_VALUE,Color.MAX_VALUE,Color.MAX_VALUE);
+        Color co2 = Color.fromHexString("#FFFFFF");
+       
+            
+//</editor-fold>
+            
+                 
+         System.out.printf("Dame el side: ");
+        
+         int tamaño = input.nextInt();
+                 
+      Square c3 = new Square(tamaño,co1,co2);
+      
+         System.out.printf("El costat de c3: %.2f %n", c3.getSide());
+         System.out.printf("El perimetre de c3: %.2f %n", c3.getPerimeter());
+         System.out.printf("L'area de c3: %.2f %n", c3.getArea());
+         System.out.printf("L'area de c3: %.2f %n", c3.getArea());
+         System.out.printf("El color de BGCOLOR ES: %s %n ", c3.getBackgroundColor().toHexString());
+         System.out.printf("El color de FGCOLOR ES: %d %d %d %n ", c3.getForegroundColor().getBlue(), c3.getForegroundColor().getGreen(), c3.getForegroundColor().getBlue());
          }
      
     
