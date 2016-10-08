@@ -48,7 +48,7 @@ public class Application {
         System.out.printf("El numero de colors creat son: %d %n", Color.getCounter());
       //Random rnd = new Random();
         
-}*/1
+}*/
     
      
      
