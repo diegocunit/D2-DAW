@@ -15,10 +15,10 @@ public class Color {
     public static final int MAX_VALUE=255;
     public static final int MIN_VALUE=0;
     private static int counter=0;
-    private static int seed=50;
+   
     
      
-//</editor-fold>
+
     
     
     //<editor-fold defaultstate="collapsed" desc="Mètodes">
@@ -30,7 +30,7 @@ public class Color {
     }
 //</editor-fold>
     
-    //<editor-fold defaultstate="collapsed" desc="string">
+    //<editor-fold defaultstate="collapsed" desc="FromHexstring">
 
      public static Color fromHexString(String color){
     //<editor-fold defaultstate="collapsed" desc="control">
@@ -51,27 +51,32 @@ public class Color {
     }
 //</editor-fold>
      
-    //<editor-fold defaultstate="collapsed" desc="torgb">
-       public String toRGBString(){
-    throw new UnsupportedOperationException("Not yet implemented");
-    }
-//</editor-fold>
+   
     //<editor-fold defaultstate="collapsed" desc="tohexstring">
         public String toHexString(boolean upper){
     
-    return toHexString(true);
+    return String.format(upper ? "#%02X%02X%02X" : "#%02x%02x%02x", getRed(),getGreen() ,getBlue());
     }
 //</editor-fold> 
-        /*public Random(long seed){
-        rnd.setSeed(seed);
-     }*/
-     
+        
+     //<editor-fold defaultstate="collapsed" desc="random">
+    public static Color getRandom() {
+        Random rnd = new Random();
+        return new Color (rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+    }
+    
+//</editor-fold>
+    
+    //<editor-fold defaultstate="collapsed" desc="torgbstring">
+         public String toRGBString(boolean upper){
+    return String.format(upper ? "RGB: %d" : "rgb: %d", getRed(),getGreen() ,getBlue());
+        }
 //</editor-fold>
    
-     
+     //</editor-fold>
     
-    
-//</editor-fold>
+    //</editor-fold>
+
     //<editor-fold defaultstate="collapsed" desc="constructor">
    
     public Color(int red, int green,int blue){
@@ -81,6 +86,15 @@ public class Color {
     this.setBlue(blue);
     
     }
+    public String toHexString(){
+    
+        return toHexString(true);
+    }
+    public String toRGBString(){
+        return toRGBString(true);
+    }
+    
+   
     
 //</editor-fold>
      //<editor-fold defaultstate="collapsed" desc="getters/setters">
@@ -97,26 +111,10 @@ public class Color {
         return blue;
     }
     
-       public static int getSeed() {
-        return seed;
-    }
-       public Random getRnd() {
-        return rnd;
-    }
+      
+       
 
-   
- public void setSeed(long seed) {
-        seed = (seed ^ 0x5DEECE66DL) & ((1L << 48) -1);
-    }
-  
 
-    public void setRnd(Random rnd) {
-        this.rnd = rnd;
-    }
- 
- 
- 
- 
     public void setRed(int red) {
         if (red < 0 || red > 255){
             throw new IllegalArgumentException(
@@ -155,6 +153,8 @@ public class Color {
 //</editor-fold>
     
 //</editor-fold>
+
+    
 
    
 

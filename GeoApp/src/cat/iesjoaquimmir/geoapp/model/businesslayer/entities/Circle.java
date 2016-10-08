@@ -5,15 +5,16 @@
  */
 package cat.iesjoaquimmir.geoapp.model.businesslayer.entities;
 
-/**
- *
- * @author alumne
- */
+
 public class Circle {
     private double radius;    
 //<editor-fold defaultstate="collapsed" desc="constructor">
      public Circle(double radius) {
         this.setRadius(radius);
+    }
+
+    public Circle() {
+        this(1.0);
     }
      
      /**
@@ -27,9 +28,7 @@ public class Circle {
         return radius;
     }
 
-    /**
-     * @param radius the radius to set
-     */
+    
     public void setRadius(double radius) {
         this.radius = radius;
     }

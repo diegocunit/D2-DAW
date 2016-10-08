@@ -1,23 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package cat.iesjoaquimmir.geoapp.model.businesslayer.entities;
 
-/**
- *
- * @author alumne
- */
+
 public class Rectangle {
-    private double base;
-    private double height;
+    private double base=1.0;
+    private double height=1.0;
+   
+    
 //<editor-fold defaultstate="collapsed" desc="construsctor">
-     public Rectangle(double base, double height) {
-        this.setBase(base);
-        this.setHeight(height);
+     public Rectangle(double base, double height){
+     this.setBase(base);
+     this.setHeight(height);
+     }
+     
+     public Rectangle(double base){
+     this(base,1.0);
+     }
+     
+    public Rectangle() {
+        this(1.0);
     }
 //</editor-fold>
+   
+    
    
      
  //<editor-fold defaultstate="collapsed" desc="base">

@@ -5,27 +5,20 @@
  */
 package cat.iesjoaquimmir.geoapp.model.businesslayer.entities;
 
-/**
- *
- * @author alumne
- */
+
 public class Square {
     private double side;    
 
     public Square(double side) {
-        this.setSide(side);
+        this.setSide(1.0);
     }      
 
-    /**
-     * @return the side
-     */
+ 
     public double getSide() {
         return side;
     }
 
-    /**
-     * @param side the side to set
-     */
+   
     public void setSide(double side) {
         this.side = side;
     }
@@ -40,5 +33,10 @@ public class Square {
     }
     
 //</editor-fold>
-    
+    //<editor-fold defaultstate="collapsed" desc="constructor">
+    public Square(){
+    this(1.0);
+     
+    }
+//</editor-fold>
 }

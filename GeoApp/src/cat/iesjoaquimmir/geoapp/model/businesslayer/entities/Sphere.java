@@ -16,6 +16,10 @@ public class Sphere {
         this.setRadio(Radio);
     }
 //</editor-fold>
+
+    public Sphere() {
+        this(1.0);
+    }
    
 
   public double getRadio() {
