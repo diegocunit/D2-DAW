@@ -10,8 +10,8 @@ public class Application {
      public static void main(String[] args){
      Scanner input = new Scanner(System.in);
      
-   
-      System.out.printf("1- Default 2- Alumne tot 3- Alumnenom 4- AlumneDNINOM  ");
+     //<editor-fold defaultstate="collapsed" desc="MENU">
+       System.out.printf("1- Default 2- Alumne tot 3- Alumnenom 4- AlumneDNINOM  ");
         
          int resp = input.nextInt();
          
@@ -30,29 +30,35 @@ public class Application {
     break;
         
          }
+//</editor-fold>
+    
      }
-          private static void Alumnedef(){
- Alumne o1 = new Alumne();
- 
- System.out.printf(" %s %n ", o1.getSalutacio());
+     //<editor-fold defaultstate="collapsed" desc="Alumnedefault">
+     private static void Alumnedef(){
+            Alumne o1 = new Alumne();
+            System.out.printf(" %s %n ", o1.getSalutacio());
  
           }
-          private static void Alumnetot(){
-            Scanner input = new Scanner(System.in);
+//</editor-fold>
+     //<editor-fold defaultstate="collapsed" desc="Alumnetot">
+      private static void Alumnetot(){
+           Scanner input = new Scanner(System.in);
            System.out.printf("Dime tu nombre: ");
-  String nombre = input.next();
+           String nombre = input.next();
   
-  System.out.printf("Dime tu dni: ");
-  String dni = input.next();
+            System.out.printf("Dime tu dni: ");
+            String dni = input.next();
   
-  System.out.printf("Dame tu edat: ");
-         int edat = input.nextInt();
+            System.out.printf("Dame tu edat: ");
+            int edat = input.nextInt();
          
-         Alumne o2 = new Alumne(nombre, dni, edat);
+            Alumne o2 = new Alumne(nombre, dni, edat);
 
    System.out.printf("%n %s %n ", o2.getSalutacio());
           }
-          private static void Alumnenom(){
+//</editor-fold>
+      //<editor-fold defaultstate="collapsed" desc="Alumnenom">
+       private static void Alumnenom(){
           
            Scanner input = new Scanner(System.in);
            System.out.printf("Dime tu nombre: ");
@@ -61,7 +67,9 @@ public class Application {
            System.out.printf("%n %s %n ", o3.getSalutacio());
                   }
           
-          private static void AlumneDNINOM(){
+//</editor-fold>
+       //<editor-fold defaultstate="collapsed" desc="AlumneDNINOM">
+       private static void AlumneDNINOM(){
           
            Scanner input = new Scanner(System.in);
            System.out.printf("Dime tu DNI: ");
@@ -71,6 +79,8 @@ public class Application {
            Alumne o4 = new Alumne(nombre,dni);
            System.out.printf("%n %s %n ", o4.getSalutacio());
                   }
+//</editor-fold>
+          
 
 
 }
