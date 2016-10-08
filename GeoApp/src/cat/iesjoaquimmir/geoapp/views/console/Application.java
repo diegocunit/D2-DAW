@@ -3,21 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package cat.iesjoaquimmir.geoapp.views.console;
 import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Square;
 import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Circle;
 import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Sphere;
 import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Rectangle;
+import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Color;
 import java.util.Scanner;
-/**
- *
- * @author alumne
- */
+import java.util.Random;
 public class Application {
      public static void main(String[] args){
      Scanner input = new Scanner(System.in);
      
-         System.out.printf("1- Cerlce 2- Quadrat 3- Rectangle 4- Esfera ");
+         System.out.printf("1- Cerlce 2- Quadrat 3- Rectangle 4- Esfera 5- ColoreS ");
         
          int resp = input.nextInt();
          
@@ -34,10 +33,25 @@ public class Application {
          case 4:
              sphere();
     break;
+        /* case 5:
+             Color();*/
          }
          
      }
-
+     
+     /*public static void Color(){
+     
+     Color co1 = new Color(125,125,Color.MAX_VALUE);
+        System.out.printf("%n co1 red: %d green: %d blue: %d %n", co1.getRed(), co1.getGreen(), co1.getBlue());
+     Color co2 = Color.fromHexString("#FFFFFF");
+        System.out.printf("Co2 red %d green: %d blue: %d %n", co2.getRed(), co2.getBlue(), co2.getGreen());
+        System.out.printf("El numero de colors creat son: %d %n", Color.getCounter());
+      //Random rnd = new Random();
+        
+}*/1
+    
+     
+     
      private static void square(){
      Square c1 = new Square(10.0);
            
