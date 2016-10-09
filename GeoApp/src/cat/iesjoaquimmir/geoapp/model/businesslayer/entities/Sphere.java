@@ -5,33 +5,41 @@
  */
 package cat.iesjoaquimmir.geoapp.model.businesslayer.entities;
 
-/**
- *
- * @author alumne
- */
-public class Sphere {
+
+public class Sphere extends General {
     private double Radio;    
+    //<editor-fold defaultstate="collapsed" desc="statics">
+    private final static double Radio1 = 1.0;
+//</editor-fold>
 //<editor-fold defaultstate="collapsed" desc="constructor">
-     public Sphere(double Radio) {
+     
+     public Sphere(double Radio, AlphaColor backgroundcolor, AlphaColor foregroundcolor){
+        super(backgroundcolor, foregroundcolor);
         this.setRadio(Radio);
+    
     }
+      public Sphere(double Radio) {
+
+        this(Radio,null,null);
+    }
+      public Sphere(){
+      this(Radio1,null,null);
+              }
 //</editor-fold>
 
-    public Sphere() {
-        this(1.0);
-    }
    
-
+   
+//<editor-fold defaultstate="collapsed" desc="getterssetters">
+    
   public double getRadio() {
         return Radio;
     }
 
-    /**
-     * @param Radio the Volumen to set
-     */
+    
     public void setRadio(double Radio) {
         this.Radio = Radio;
     }
+//</editor-fold>
   //<editor-fold defaultstate="collapsed" desc="metodes">
     
     public double getArea(){

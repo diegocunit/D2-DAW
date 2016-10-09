@@ -2,23 +2,30 @@
 package cat.iesjoaquimmir.geoapp.model.businesslayer.entities;
 
 
-public class Rectangle {
+public class Rectangle extends General {
     private double base=1.0;
     private double height=1.0;
    
-    
+    //<editor-fold defaultstate="collapsed" desc="static">
+    private static final double height1 = 1.0;
+    private static final double base1 = 1.0;
+//</editor-fold>
 //<editor-fold defaultstate="collapsed" desc="construsctor">
-     public Rectangle(double base, double height){
+     public Rectangle(double base, double height,AlphaColor backgroundcolor, AlphaColor foregroundcolor){
+         super(backgroundcolor, foregroundcolor);
      this.setBase(base);
      this.setHeight(height);
      }
+     public Rectangle(double base, double height){
+     this(base,height,null,null);
+     }
      
      public Rectangle(double base){
-     this(base,1.0);
+     this(base,height1,null,null);
      }
      
     public Rectangle() {
-        this(1.0);
+        this(base1,height1,null,null);
     }
 //</editor-fold>
    

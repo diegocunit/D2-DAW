@@ -3,7 +3,7 @@ package cat.iesjoaquimmir.geoapp.model.businesslayer.entities;
 import java.util.Random;
 
 
-public class Color {
+public abstract class Color {
 
  
  //<editor-fold defaultstate="collapsed" desc="atributs">
@@ -14,21 +14,12 @@ public class Color {
    
     public static final int MAX_VALUE=255;
     public static final int MIN_VALUE=0;
-    private static int counter=0;
    
-    
-     
 
-    
-    
     //<editor-fold defaultstate="collapsed" desc="Mètodes">
     //<editor-fold defaultstate="collapsed" desc="Mètodes estatics">
     //<editor-fold defaultstate="collapsed" desc="operadors">
-     //<editor-fold defaultstate="collapsed" desc="counter">
-    public static int getCounter(){
-        return counter;
-    }
-//</editor-fold>
+     
     
     //<editor-fold defaultstate="collapsed" desc="FromHexstring">
 
@@ -44,7 +35,7 @@ public class Color {
     }
 //</editor-fold>
     
-    return new Color(Integer.parseInt(color.substring(1,3), 16),
+    return new AlphaColor(Integer.parseInt(color.substring(1,3), 16),
     Integer.parseInt(color.substring(3, 5), 16),
     Integer.parseInt(color.substring(5, 7), 16));
     
@@ -57,12 +48,16 @@ public class Color {
     
     return String.format(upper ? "#%02X%02X%02X" : "#%02x%02x%02x", getRed(),getGreen() ,getBlue());
     }
+        public String toHexString(){
+    
+        return toHexString(true);
+    }
 //</editor-fold> 
         
      //<editor-fold defaultstate="collapsed" desc="random">
     public static Color getRandom() {
         Random rnd = new Random();
-        return new Color (rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+        return new AlphaColor (rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
     }
     
 //</editor-fold>
@@ -71,8 +66,17 @@ public class Color {
          public String toRGBString(boolean upper){
     return String.format(upper ? "RGB: %d" : "rgb: %d", getRed(),getGreen() ,getBlue());
         }
+         
 //</editor-fold>
-   
+         //<editor-fold defaultstate="collapsed" desc="tostring">
+          public String toString(){
+        return String.format("%s ", super.toString() );
+    } 
+          
+         
+         
+//</editor-fold>
+    
      //</editor-fold>
     
     //</editor-fold>
@@ -80,19 +84,12 @@ public class Color {
     //<editor-fold defaultstate="collapsed" desc="constructor">
    
     public Color(int red, int green,int blue){
-       counter++;
+       
     this.setRed(red);
     this.setGreen(green);
     this.setBlue(blue);
+    }
     
-    }
-    public String toHexString(){
-    
-        return toHexString(true);
-    }
-    public String toRGBString(){
-        return toRGBString(true);
-    }
     
    
     
@@ -153,6 +150,8 @@ public class Color {
 //</editor-fold>
     
 //</editor-fold>
+
+  
 
     
 
