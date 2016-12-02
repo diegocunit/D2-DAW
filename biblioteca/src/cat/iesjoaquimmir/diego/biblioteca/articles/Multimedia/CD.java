@@ -44,7 +44,5 @@ public class CD extends Multimedia {
         this.setIsmn(ismn);
     }
 //</editor-fold>
-   
-   
-   
+
 }

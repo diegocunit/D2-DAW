@@ -3,5 +3,22 @@ package cat.iesjoaquimmir.diego.biblioteca.articles;
 
 public enum Categoria {
     
-     infantil,juvenil,adult;
+     infantil("infantil", false),
+     juvenil("juvenil", false),
+     adult("adult", true);
+     
+     private final String mensaje;
+     private final boolean adulto;
+     
+     Categoria (String mensaje, boolean adulto){
+         this.mensaje = mensaje;
+         this.adulto = adulto;
+        
+     }
+     public String getMensaje(){
+         return mensaje;
+     }
+     public boolean categoriaAdulta(){
+         return adulto;
+     }
 }

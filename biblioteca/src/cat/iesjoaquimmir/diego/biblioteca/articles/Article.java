@@ -52,6 +52,7 @@ public abstract class Article {
         }
         this.titol = titol;
     }
+    
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="metodes">
     //<editor-fold defaultstate="collapsed" desc="tostring">
