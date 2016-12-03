@@ -1,6 +1,7 @@
 
 package cat.iesjoaquimmir.diego.bilbioteca.usuaris;
 import cat.iesjoaquimmir.diego.biblioteca.articles.Article;
+import cat.iesjoaquimmir.diego.bilbioteca.usuaris.adults.Adult;
 
 import java.util.ArrayList;
 
@@ -167,12 +168,25 @@ public abstract class Usuari  {
                           }
                       }
                       //</editor-fold>
-                      
+                       //<editor-fold defaultstate="collapsed" desc="tostring">
+                       public String toString(){
+                           return String.format(" con nombre: %s %s %s %n"
+                                   + "Los articulos seleccionados: %s %n" , getNom(), getCognom1(), getCognom2(), getArticles()
+                           );
+                       }
+//</editor-fold>
 //</editor-fold>
 
     //<editor-fold defaultstate="collapsed" desc="firma">
     protected abstract boolean isPrem();
     protected abstract boolean isAdulto();
 //</editor-fold>
+
+    
+
+    
+
+  
+   
  
 }

@@ -31,7 +31,7 @@ public class ArticleTest {
              case 1:
                  crearatriculos();
              case 2:
-                 crearusuarios();
+                 menuusuarios();
          }
 //</editor-fold>
       
@@ -66,12 +66,12 @@ public class ArticleTest {
         }
      }
 //</editor-fold>
-     //<editor-fold defaultstate="collapsed" desc="crearusuarios">
-         private static void crearusuarios(){
+     //<editor-fold defaultstate="collapsed" desc="Menu">
+         private static void menuusuarios(){
          
          Scanner input = new Scanner(System.in);
          
-          System.out.printf("1- Agregar usuarios 2- Puedocoger? 3- Coger articulo 4- Tengo el articulo? 4- Quitar articulo");
+          System.out.printf("1- Agregar usuarios 2- agregar articulo a usuario  4- Tengo el articulo? 4- Quitar articulo");
         
          int resp = input.nextInt();
          
@@ -80,17 +80,17 @@ public class ArticleTest {
                  agregarusuarios();
                  break;
              case 2:
-                 puedcoger();
+                 
                  break;
              case 3: 
-                 cogerarticulo();
+               /*  cogerarticulo();
                  break;
              case 4:
                  tengoarticulo();
                  break;
              case 5:
                  quitararticulo();
-                 break;
+                 break;*/
          }
          
        
@@ -110,44 +110,61 @@ public class ArticleTest {
              case 1:
                      Adult usuariPremium = new Adult("498878974K", true, "Pepe", "Carrasco", "Coronado");
                      usuarios.add(usuariPremium);
+                     puedocoger(usuariPremium);
                  break;
              case 2:
-                 Adult usuariNormal = new Adult("498878214M", false, "Paco", "Soler", "Picasso");
-            usuarios.add(usuariNormal);
+                      Adult usuariNormal = new Adult("498878214M", false, "Paco", "Soler", "Picasso");
+                      usuarios.add(usuariNormal);
+                      puedocoger(usuariNormal);
                  break;
              case 3: 
-                  Adult usuarioPrem = new Adult("47956779p", true, "Diego", "Mejias", "Ruiz");
-                Menor usuariMenorPremium = new Menor(usuarioPrem, "Pedro", "Garcia", "Saez");
-            usuarios.add(usuariMenorPremium);
+                    Adult usuarioPrem = new Adult("47956779p", true, "Diego", "Mejias", "Ruiz");
+                    Menor usuariMenorPremium = new Menor(usuarioPrem, "Pedro", "Garcia", "Saez");
+                    usuarios.add(usuariMenorPremium);
+                    puedocoger(usuarioPrem);
                  break;
              case 4:
                   Adult usuarioNorm = new Adult("498878214M", false, "Diego", "Mejias", "Martinez");
-                 Menor usuariMenorNormal = new Menor(usuarioNorm, "Paulo", "Lopez", "Moliere");
-            usuarios.add(usuariMenorNormal);
+                  Menor usuariMenorNormal = new Menor(usuarioNorm, "Paulo", "Lopez", "Moliere");
+                  usuarios.add(usuariMenorNormal);
+                  puedocoger(usuarioNorm);
                  break;
              
          }
-     
-          
-      
-      
-      
-      
-      
-           
+         
      }
 //</editor-fold>
-         //<editor-fold defaultstate="collapsed" desc="puedocoger">
-         private static void puedocoger(){
-             int i;
-              Scanner input = new Scanner(System.in);
-             ArrayList<Article> articles = new ArrayList<>();
-             for(i=0; i<articles.size();i++){
-            System.out.printf("%s %n %n", articles.toString());
-             }
-             System.out.println("Escoge un articulo de los vistos");
-                 
-           Usuari.potAgafarArticle(d1);
+            //<editor-fold defaultstate="collapsed" desc="puedocoger">
+         private static void puedocoger(Usuari usuario){
+            int i;
+        ArrayList<Article> articles = new ArrayList<>();
+        Scanner input = new Scanner(System.in);
+    //<editor-fold defaultstate="collapsed" desc="cd">
+    CD c1 = new CD ("Mis grandes exitos", "Luis Miguel", Categoria.adult, 65, "0490000412");
+         articles.add(c1);
+//</editor-fold>
+    //<editor-fold defaultstate="collapsed" desc="dvd">
+ DVD d1 = new DVD ("Bamby", "Walt diseny", Categoria.infantil, 89, "9005065408");
+        articles.add(d1);
+//</editor-fold>
+    //<editor-fold defaultstate="collapsed" desc="revista">
+
+    Revista r1 = new Revista ("Patufet", "yo", Categoria.infantil, 87, "80002122s");
+        articles.add(r1);
+//</editor-fold>
+    //<editor-fold defaultstate="collapsed" desc="llibre">
+ Llibres ll1 = new Llibres ("Tina Super Bruixa", "Enid Blyton", Categoria.juvenil, 467, "34524656");
+        articles.add(ll1);
+//</editor-fold>
+    
+   
+        
+            System.out.printf("%n %s %n %n", articles.toString());
+        
+            System.out.printf("La descripcion del usuario es: %s %n %n",usuario.toString());
+                
+              
+           System.out.printf("Depende de lo que retorne puedes coger este articulo o no: %s ", usuario.potAgafarArticle(c1));
          }
 //</editor-fold>
 }

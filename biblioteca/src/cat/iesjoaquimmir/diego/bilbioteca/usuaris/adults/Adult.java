@@ -61,8 +61,17 @@ public class Adult extends Usuari {
     }
   
 //</editor-fold>
-
+    //<editor-fold defaultstate="collapsed" desc="totstring">
+         @Override
+    public String toString() {
+        return String.format("%s"
+                + " %s"
+                + "%s", getDni(), isPremium(), super.toString()); 
+    }
 //</editor-fold>
+//</editor-fold>
+
+    
 
 
 

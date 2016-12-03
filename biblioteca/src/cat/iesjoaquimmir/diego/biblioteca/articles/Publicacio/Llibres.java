@@ -26,9 +26,9 @@ public class Llibres extends Publicacio {
     //<editor-fold defaultstate="collapsed" desc="tostring">
      @Override
     public String toString() {
-        return String.format(" %s "
+        return String.format(" %s"
                 
-                + "Isbn: %s",
+                + "Isbn: %s %n",
                 super.toString(), getIsbn()); 
     
     }

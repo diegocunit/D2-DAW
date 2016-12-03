@@ -29,7 +29,7 @@ public class Revista extends Publicacio{
     public String toString() {
         return String.format(" %s "
       
-                + "Issn: %s",
+                + "Issn: %s %n",
                 super.toString(), getIssn()); 
     
     }

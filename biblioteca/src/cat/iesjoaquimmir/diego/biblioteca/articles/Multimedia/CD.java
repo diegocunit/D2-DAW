@@ -25,7 +25,7 @@ public class CD extends Multimedia {
     public String toString() {
         return String.format(" %s "
                 
-                + "Ismn: %s",
+                + "Ismn: %s %n",
                 super.toString(), getIsmn()); 
     }
 //</editor-fold>

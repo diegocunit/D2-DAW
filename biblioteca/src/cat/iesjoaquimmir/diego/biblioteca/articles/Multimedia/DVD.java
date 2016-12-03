@@ -30,7 +30,7 @@ public class DVD extends Multimedia {
     public String toString() {
         return String.format(" %s "
                 
-                + "Isan: %s",
+                + "Isan: %s %n",
                 super.toString(), getIsan()); 
     
     }
