@@ -164,7 +164,10 @@ public class ArticleTest {
             System.out.printf("La descripcion del usuario es: %s %n %n",usuario.toString());
                 
               
-           System.out.printf("Depende de lo que retorne puedes coger este articulo o no: %s ", usuario.potAgafarArticle(c1));
+           System.out.printf("Depende de lo que retorne puedes coger este articulo o no: %s ", usuario.potAgafarArticle(d1));
+           
+           System.out.printf("Depende de lo que retorne puedes coger este articulo o no: %s ", d1.getCategoria().categoriaAdulta());
+           
          }
 //</editor-fold>
 }

@@ -5,7 +5,7 @@ public enum Categoria {
     
      infantil("infantil", false),
      juvenil("juvenil", false),
-     adult("adult", true);
+     adult("adulto", true);
      
      private final String mensaje;
      private final boolean adulto;
