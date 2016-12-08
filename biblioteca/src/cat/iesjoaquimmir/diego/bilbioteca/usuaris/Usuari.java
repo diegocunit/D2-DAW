@@ -77,11 +77,11 @@ public abstract class Usuari  {
         //<editor-fold defaultstate="collapsed" desc="potagafar">
          public boolean potAgafarArticle(Article a){
     ///////////////////////// Si es adulto ////////////////////////////
-             if(isAdulto() == true){
+             if(isAdulto()){
         //////////// Es premium //////////////
-                 if(isPrem() == true ){
+                 if(isPrem()){
                    //////// no ha cogido el maximo
-                        if(articles.size()<4){
+                        if(getArticles().size()<4){
                             return true;
                    /////// ya no tiene articulos disponibles a coger
                         }else{
@@ -90,7 +90,7 @@ public abstract class Usuari  {
         /////////// Si no es premium ///////////
                 }else{
                    ///////// Si no ha cogido el maximo
-                        if(articles.size()<2){
+                        if(getArticles().size()<2){
                             return true;
                    //////// si ya ha cogido el maximo
                         }else{
@@ -100,12 +100,12 @@ public abstract class Usuari  {
     ///////////////////////////// Si es menor ////////////////////////////////
              }else{
         ///////// Si tutor es premium //////////
-                    if(isPrem() == true ){  
+                    if(isPrem()){  
 
                     ///////// no ha cogido el maximo
-                        if(articles.size()<4){
+                        if(getArticles().size()<4){
                               ////// Si es categoria adulta
-                                if(a.getCategoria().categoriaAdulta() == true ){
+                                if(a.getCategoria().categoriaAdulta()){
                                     return false;
                                 ////// Si la categoria no es adulta
                                 }else{
@@ -119,9 +119,9 @@ public abstract class Usuari  {
        ///////// Si tutor no es premium /////////////
                     }else{
                         // si no ha cogido el maximo
-                        if(articles.size()<2){
+                        if(getArticles().size()<2){
                             // si es categoria adulta
-                            if(a.getCategoria().categoriaAdulta() == true){
+                            if(a.getCategoria().categoriaAdulta()){
                                     return false;
                             // si no es categoria adulta
                              }else{
@@ -152,10 +152,10 @@ public abstract class Usuari  {
                 //<editor-fold defaultstate="collapsed" desc="agafaarticle">
                       public void agafaArticle(Article a){
                           // Miramos si este usuario tiene o no el articulo en la arraylist
-                          if(teArticles(a) == false){
+                          if(teArticles(a) == false && potAgafarArticle(a)){
                                 articles.add(a);
                           }else{
-                                System.out.println("Este articulo ya lo has cogido");
+                                System.out.println("Este articulo ya lo tienes");
                           }
                       }
 

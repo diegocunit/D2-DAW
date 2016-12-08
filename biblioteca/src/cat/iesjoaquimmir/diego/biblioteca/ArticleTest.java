@@ -71,7 +71,7 @@ public class ArticleTest {
          
          Scanner input = new Scanner(System.in);
          
-          System.out.printf("1- Agregar usuarios 2- agregar articulo a usuario  4- Tengo el articulo? 4- Quitar articulo");
+          System.out.printf("1- Agregar usuarios 2-  articulo a usuario 4- Quitar articulo");
         
          int resp = input.nextInt();
          
@@ -121,13 +121,13 @@ public class ArticleTest {
                     Adult usuarioPrem = new Adult("47956779p", true, "Diego", "Mejias", "Ruiz");
                     Menor usuariMenorPremium = new Menor(usuarioPrem, "Pedro", "Garcia", "Saez");
                     usuarios.add(usuariMenorPremium);
-                    puedocoger(usuarioPrem);
+                    puedocoger(usuariMenorPremium);
                  break;
              case 4:
                   Adult usuarioNorm = new Adult("498878214M", false, "Diego", "Mejias", "Martinez");
                   Menor usuariMenorNormal = new Menor(usuarioNorm, "Paulo", "Lopez", "Moliere");
                   usuarios.add(usuariMenorNormal);
-                  puedocoger(usuarioNorm);
+                  puedocoger(usuariMenorNormal);
                  break;
              
          }
@@ -137,9 +137,12 @@ public class ArticleTest {
             //<editor-fold defaultstate="collapsed" desc="puedocoger">
          private static void puedocoger(Usuari usuario){
             int i;
-        ArrayList<Article> articles = new ArrayList<>();
-        Scanner input = new Scanner(System.in);
-    //<editor-fold defaultstate="collapsed" desc="cd">
+            int resp = 0;
+            
+            ArrayList<Article> articles = new ArrayList<>();
+            Scanner input = new Scanner(System.in);
+        //<editor-fold defaultstate="collapsed" desc="articulos">
+             //<editor-fold defaultstate="collapsed" desc="cd">
     CD c1 = new CD ("Mis grandes exitos", "Luis Miguel", Categoria.adult, 65, "0490000412");
          articles.add(c1);
 //</editor-fold>
@@ -156,18 +159,54 @@ public class ArticleTest {
  Llibres ll1 = new Llibres ("Tina Super Bruixa", "Enid Blyton", Categoria.juvenil, 467, "34524656");
         articles.add(ll1);
 //</editor-fold>
-    
-   
+//</editor-fold>
+                System.out.printf("LISTA DE ARTICULOS %n %n %s %n %n", articles.toString());
+                System.out.printf("La descripcion del usuario es: %s %n %n",usuario.toString());
         
-            System.out.printf("%n %s %n %n", articles.toString());
+        do{
+            System.out.println("Quieres coger un articulo o salir? 1 o 0");
+            resp = input.nextInt();
         
-            System.out.printf("La descripcion del usuario es: %s %n %n",usuario.toString());
-                
-              
-           System.out.printf("Depende de lo que retorne puedes coger este articulo o no: %s ", usuario.potAgafarArticle(d1));
+            System.out.printf("Que articulo quieres coger? 1: CD - 2: DVD - 3: Revista - 4: Llibre 0: SALIR %n");
+            int opcion = input.nextInt();
            
-           System.out.printf("Depende de lo que retorne puedes coger este articulo o no: %s ", d1.getCategoria().categoriaAdulta());
+             switch (opcion) {
+             case 1:
+                    System.out.printf("La categoria de este articulo es adulta?: %s %n", c1.getCategoria().categoriaAdulta());
+                    agafararticle(usuario, c1);
+                 break;
+             case 2:
+                    System.out.printf("La categoria de este articulo es adulta?: %s %n", d1.getCategoria().categoriaAdulta());
+                    agafararticle(usuario, d1);
+                 break;
+             case 3: 
+                    System.out.printf("La categoria de este articulo es adulta?: %s %n", r1.getCategoria().categoriaAdulta());
+                    agafararticle(usuario, r1);
+                 break;
+             case 4:
+                    System.out.printf("La categoria de este articulo es adulta?: %s %n", ll1.getCategoria().categoriaAdulta());
+                    agafararticle(usuario, ll1);
+                 break;
            
+         }
+            
+           
+        }while(resp != 0);
+
+       
+  
+        }
+         
+         
+         private static void agafararticle(Usuari usuario, Article a){
+         if(usuario.potAgafarArticle(a) && usuario.teArticles(a) == false){
+             usuario.agafaArticle(a);
+             System.out.printf("Has agregado el articulo a usuario!! %n");
+             System.out.printf("Tienes esta lista de articulos: %s %n ", usuario.getArticles());
+         }else{
+             System.out.printf("No puedes coger este articulo!! %n %n");
+         }
+             
          }
 //</editor-fold>
 }
