@@ -11,7 +11,7 @@ public abstract class Usuari  {
     private String nom;
     private String cognom1;
     private String cognom2;
-    private ArrayList<Article> articles = new ArrayList<>();
+    private ArrayList<Article> articles;
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="getters/setters">
        public String getCognom1() {
@@ -60,18 +60,17 @@ public abstract class Usuari  {
     
 //</editor-fold>
    //<editor-fold defaultstate="collapsed" desc="constructor">
-    public Usuari(String nom, String cognom1, String cognom2, ArrayList<Article> articles ){
-        this.setNom(nom);
-        this.setCognom1(cognom1);
-        this.setCognom2(cognom2);
-        this.setArticles(articles);
-    }
-    public Usuari(String nom, String cognom1, String cognom2 ){
-        this.setNom(nom);
-        this.setCognom1(cognom1);
-        this.setCognom2(cognom2);
-      
-    }
+     private Usuari(String nom, String cognom1, String cognom2, ArrayList<Article> articles) {
+        this.nom = nom;
+        this.cognom1 = cognom1;
+        this.cognom2 = cognom2;
+        this.articles = articles;
+}
+     
+            
+       public Usuari(String nom, String cognom1, String cognom2)  {
+            this(nom, cognom1, cognom2, new ArrayList<>());
+}
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="metodes">
         //<editor-fold defaultstate="collapsed" desc="potagafar">
