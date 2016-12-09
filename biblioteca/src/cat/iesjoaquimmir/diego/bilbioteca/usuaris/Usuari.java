@@ -69,7 +69,7 @@ public abstract class Usuari  {
      
             
        public Usuari(String nom, String cognom1, String cognom2)  {
-            this(nom, cognom1, cognom2, new ArrayList<>());
+            this(nom, cognom1, cognom2, new ArrayList<Article>());
 }
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="metodes">
@@ -170,7 +170,7 @@ public abstract class Usuari  {
                        //<editor-fold defaultstate="collapsed" desc="tostring">
                        public String toString(){
                            return String.format(" con nombre: %s %s %s %n"
-                                   + "Los articulos seleccionados: %s %n" , getNom(), getCognom1(), getCognom2(), getArticles()
+                                   + "Los articulos seleccionados: %s %n %n" , getNom(), getCognom1(), getCognom2(), getArticles()
                            );
                        }
 //</editor-fold>
@@ -180,12 +180,28 @@ public abstract class Usuari  {
     protected abstract boolean isPrem();
     protected abstract boolean isAdulto();
 //</editor-fold>
+/*
+    public boolean contains(ArrayList<Article> articles, ArrayList<Usuari> usuaris) {
+        if(usuaris.contains(articles)){
+            return true;
+    }else{
+    return false;
+    }
 
     
 
-    
-
-  
-   
  
+}*/
+/*
+   public boolean contiene(Article articles, Usuari usuario){
+                  /// si articulo a esta dentro del array de articles
+                    if(usuario.contains(articles)){
+                        return true;
+                  /// si articulo no esta 
+                    }else{
+                        return false;
+                    }
+              }*/
+
+    
 }

@@ -1,4 +1,4 @@
-
+/*
 package cat.iesjoaquimmir.diego.biblioteca;
 
 import cat.iesjoaquimmir.diego.biblioteca.articles.Article;
@@ -91,13 +91,14 @@ public class ArticleTest {
              case 5:
                  quitararticulo();
                  break;*/
-         }
+         
          
        
          
           
-     }
+     
 //</editor-fold>
+/*
          //<editor-fold defaultstate="collapsed" desc="agregarusuarios">
          private static void agregarusuarios(){
              Scanner input = new Scanner(System.in);
@@ -142,11 +143,11 @@ public class ArticleTest {
             ArrayList<Article> articles = new ArrayList<>();
             Scanner input = new Scanner(System.in);
         //<editor-fold defaultstate="collapsed" desc="articulos">
-             //<editor-fold defaultstate="collapsed" desc="cd">
+     //<editor-fold defaultstate="collapsed" desc="cd">
     CD c1 = new CD ("Mis grandes exitos", "Luis Miguel", Categoria.adult, 65, "0490000412");
          articles.add(c1);
-//</editor-fold>
-    //<editor-fold defaultstate="collapsed" desc="dvd">
+
+ //<editor-fold defaultstate="collapsed" desc="dvd">
  DVD d1 = new DVD ("Bamby", "Walt diseny", Categoria.infantil, 89, "9005065408");
         articles.add(d1);
 //</editor-fold>
@@ -159,6 +160,8 @@ public class ArticleTest {
  Llibres ll1 = new Llibres ("Tina Super Bruixa", "Enid Blyton", Categoria.juvenil, 467, "34524656");
         articles.add(ll1);
 //</editor-fold>
+//</editor-fold>
+   
 //</editor-fold>
                 System.out.printf("LISTA DE ARTICULOS %n %n %s %n %n", articles.toString());
                 System.out.printf("La descripcion del usuario es: %s %n %n",usuario.toString());
@@ -210,3 +213,4 @@ public class ArticleTest {
          }
 //</editor-fold>
 }
+*/
