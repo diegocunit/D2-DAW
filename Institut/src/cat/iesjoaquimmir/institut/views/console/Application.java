@@ -13,7 +13,7 @@ public class Application {
      Scanner input = new Scanner(System.in);
      
      //<editor-fold defaultstate="collapsed" desc="MENU">
-       System.out.printf("1- Default 2- Alumne tot 3- Alumnenom 4- AlumneDNINOM 5-AlumneNombrecompleto 6-Damedomicilio 7-dimesieresmayor 8-listastelf 9-listasmods 10- Exceptions ");
+       System.out.printf("1- Default 2- Alumne tot 3- Alumnenom 4- AlumneDNINOM 5-AlumneNombrecompleto 6-Damedomicilio 7-dimesieresmayor %n 8-listastelf 9-listasmods 10- Exceptions ");
         
          int resp = input.nextInt();
          
@@ -212,40 +212,50 @@ public class Application {
            Scanner input = new Scanner(System.in);
            
 // ALUMNE
-           
-                System.out.printf("Dime tu nombre: ");
-                String nombre = input.next();
-                
-                System.out.printf("Dame tu primer apellido: ");
-                 String primercognom = input.next();
+                 try{
+                        System.out.printf("Dime tu nombre: ");
+                            String nombre = input.nextLine();
+                         System.out.printf("Dame tu primer apellido: ");
+                             String primercognom = input.nextLine();
+                        
+                         System.out.printf("Dame tu segundo apellido: ");
+                             String segoncognom = input.next();
+                         System.out.printf("Dime tu calle:  ");
+                             String calle = input.next();
+                         provoconombre(nombre);
+                    }catch(Excepciones letras){
+                          letras.printStackTrace();
 
-                 System.out.printf("Dame tu segundo apellido: ");
-                 String segoncognom = input.next();
-          
+                    }
+           
                  System.out.printf("Dime tu dni: ");
                  String dni = input.next();
            
-                 System.out.printf("Dime tu edat: ");
-                 int edat = input.nextInt();
+                
   //DOMICILIO
                 
-                System.out.printf("Dime tu calle:  ");
-                    String calle = input.next();
-                    try{
-                 System.out.printf("Dime el numero:");
-                     int numero = input.nextInt();
-                    }catch(erroresdom e){
-                        System.err.println("erroresdom: ", e);
-                    }
+                
                     
-                    System.out.printf("Dime tu piso:  ");
-                     int pis = input.nextInt();
+                    try{
+                          System.out.printf("Dime tu edat: ");
+                                int edat = input.nextInt();
+                          System.out.printf("Dime tu numero:  ");
+                                 int numero = input.nextInt();
+                           System.out.printf("Dime tu piso:  ");
+                                 int pis = input.nextInt();
+                          provocoExcepcio(numero);
+                          
+                    }catch(Exception numero){
+                           numero.printStackTrace();
+                    }
+                
                  System.out.printf("Dime tu codigopostal:  ");
                      int codipostal = input.nextInt();
                  System.out.printf("Dime tu poblacion:  ");
                    String poblacion = input.next();
                 System.out.printf("Dime tu provincia:  ");
                    String provincia = input.next();
+             // Domicilio dom1 = new Domicilio(calle,numero,pis,codipostal,poblacion,provincia);
  //TELEFONOS
             ArrayList<String> telefon = new ArrayList<>();
                 
@@ -260,17 +270,32 @@ public class Application {
                     System.out.printf("Dime tu telefono %d %n: ", i);
                     telefon.add(input.next());
                  }
-              Domicilio dom1 = new Domicilio(calle,numero,pis,codipostal,poblacion,provincia);
-             Alumne ex1 = new Alumne(nombre, primercognom, segoncognom,edat,dni,telefon,dom1);
+              
+             //Alumne ex1 = new Alumne(nombre, primercognom, segoncognom,edat,dni,telefon,dom1);
            
            }
           
+       public static void provocoExcepcio(int valor) throws Exception{
+           System.out.println("Els numeros: " + valor);
+           
+           if(valor < 0)throw new Exception("El numero ha de ser superior a 0");
+           
+           System.out.println("No s'ha provocat cap excepcio");
+       }
+        
+       public static void provoconombre(String letras) throws Excepciones{
+           System.out.println("Los valores: " + letras);
+           
+            if(letras.isEmpty())throw new Excepciones(letras);
+            
+                System.out.println("No s'ha provocat cap excepcio");
+             }
        
           
           }
 //</editor-fold>
            
-}
+
 
    
       
